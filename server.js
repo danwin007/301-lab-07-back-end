@@ -41,17 +41,16 @@ app.get('/location', (request, response) => {
 function Weather (skyData) {
   this.forecast = skyData.summary;
   this.time = new Date(skyData.time * 1000).toDateString();
-  // allWeather.push(this);
+  allWeather.push(this);
 }
 
-// let allWeather=[];
+let allWeather=[];
 
 // app.get('/weather', (request, response) => {
 //   try{
 //     const skyData = require('./data/darksky.json');
-//     skyData.daily.data.forEach ((byDate) => {
+//     let allWeather = skyData.daily.data.map ((byDate) => {
 //       new Weather(byDate);
-//       console.log(allWeather);
 //     });
 //     response.send(allWeather);
 //   }
@@ -63,8 +62,9 @@ function Weather (skyData) {
 app.get('/weather', (request, response) => {
   try{
     const skyData = require('./data/darksky.json');
-    let allWeather = skyData.daily.data.map ((byDate) => {
+    skyData.daily.data.forEach ((byDate) => {
       new Weather(byDate);
+      console.log(allWeather);
     });
     response.send(allWeather);
   }
@@ -72,6 +72,7 @@ app.get('/weather', (request, response) => {
     errorHandler('Not today, satan.', request, response);
   }
 })
+
 
 
 
