@@ -14,6 +14,16 @@ The user will simply need to clone down our repo in order to use this app. They 
 This application will be primarily built with JavaScript and JSON. It will be interacting with HTML and CSS provided by a separate developer. The API information will be accessed and massaged by Node, npm, Super Agent, express, cors, and dotenv.
 
 ## Change Log
+
+**deployed Heroku Link**
+https://cf-301-lab-07.herokuapp.com
+
+7:05:
+Finished setting up files needed to start lab. Brett arrives. Starting feature 1 now. 
+
+8:05: 
+Finished the .map set up. Now starting feature 2.
+
 <!-- Use this area to document the iterative changes made to your application as each feature is successfully implemented. Use time stamps. Here's an examples:
 
 01-01-2001 4:59pm - Application now has a fully-functional express server, with a GET route for the location resource.
@@ -27,20 +37,20 @@ This application will be primarily built with JavaScript and JSON. It will be in
 ### Feature 1
 Number and name of feature: Data formatting
 
-Estimate of time needed to complete: _____
+Estimate of time needed to complete: 30 min
 
-Start time: _____
+Start time: 7:05
 
-Finish time: _____
+Finish time: 8:00
 
-Actual time needed to complete: _____
+Actual time needed to complete: 55 min
 
 ### Feature 2
 Number and name of feature: Locations
 
-Estimate of time needed to complete: _____
+Estimate of time needed to complete: 1 hour
 
-Start time: _____
+Start time: 8:02
 
 Finish time: _____
 
