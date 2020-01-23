@@ -19,49 +19,36 @@ app.get('/location', locationHandler);
 
 function Location(city, geoData){
   this.search_query = city;
-  this.formatted_query = geoData[0].display_name;
-  this.latitude = geoData[0].lat;
-  this.longitude = geoData[0].lon;
+  this.formatted_query = geoData.display_name;
+  this.latitude = geoData.lat;
+  this.longitude = geoData.lon;
 }
 
 function locationHandler(request, response){
   try{
-    let city = request.query.city;
-    let key = process.env.GEOCODE_API_KEY;
-    const url = `https://us1.locationiq.com/v1/search.php?key=${key}&q=${city}&format=json&limit=1`;
+    const city = request.query.city;
+    const url = `https://us1.locationiq.com/v1/search.php?key=${process.env.GEOCODE_API_KEY}&q=${city}&format=json&limit=1`;
+    // console.log(url);
 
     superagent.get(url)
       .then(data => {
-        const geoData = data.body[0];
-        const location = new Location(city, geoData);
-        response.send(location);
+        console.log(data.body[0]);
+        const locationData = new Location(city, data.body[0]);
+        response.send(locationData);
       })
-      .catch(() => {
-        errorHandler('location superagent broken', request, response);
-      });
   }
   catch(error){
-    errorHandler(error, request, response);
+    errorHandler('Not today, satan.', request, response);
   }
 }
 
+
 // app.get('/location', (request, response) => {
-//   try{
-//     const geoData = require('./data/geo.json');
-//     const city = request.query.city;
-//     const locationData = new Location(city, geoData);
-//     response.send(locationData);
-//   }
-//   catch(error){
-//     errorHandler('Not today, satan.', request, response);
-//   }
-// })
 
 function Weather (skyData) {
   this.forecast = skyData.summary;
   this.time = new Date(skyData.time * 1000).toDateString();
 }
-
 
 app.get('/weather', (request, response) => {
   try{
