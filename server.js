@@ -9,6 +9,7 @@ const superagent = require('superagent');
 const PORT = process.env.PORT;
 const app = express();
 app.use(cors());
+app.options('*', cors());
 
 //List of Routes
 app.get('/', (request, response) => {
