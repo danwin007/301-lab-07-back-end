@@ -16,7 +16,10 @@ app.get('/', (request, response) => {
 })
 //Location Route
 app.get('/location', locationHandler);
+//Weather Route
+app.get('/weather', weatherHandler);
 
+//Location Constructor Object
 function Location(city, geoData){
   this.search_query = city;
   this.formatted_query = geoData.display_name;
@@ -28,11 +31,10 @@ function locationHandler(request, response){
   try{
     const city = request.query.city;
     const url = `https://us1.locationiq.com/v1/search.php?key=${process.env.GEOCODE_API_KEY}&q=${city}&format=json&limit=1`;
-    // console.log(url);
 
     superagent.get(url)
       .then(data => {
-        console.log(data.body[0]);
+        // console.log(data.body[0]);
         const locationData = new Location(city, data.body[0]);
         response.send(locationData);
       })
@@ -43,26 +45,33 @@ function locationHandler(request, response){
 }
 
 
-// app.get('/location', (request, response) => {
 
-function Weather (skyData) {
-  this.forecast = skyData.summary;
-  this.time = new Date(skyData.time * 1000).toDateString();
-}
-
-app.get('/weather', (request, response) => {
+//testing new weather handler fn
+function weatherHandler(request, response) {
   try{
-    const skyData = require('./data/darksky.json');
-    let allWeather = skyData.daily.data.map((byDate) => {
-      return new Weather(byDate);
-    });
-    console.log(allWeather);
-    response.send(allWeather);
+    const lat = request.query.latitude;
+    const long = request.query.longitude;
+    const url = `https://api.darksky.net/forecast/${process.env.WEATHER_API_KEY}/${lat},${long}`;
+
+    superagent.get(url)
+      .then(data => {
+        const weatherData = data.body.daily.data.map(obj => {
+          return new Weather(obj);
+        })
+        console.log(weatherData);
+        response.send(weatherData);
+      })
   }
   catch(error){
     errorHandler('Not today, satan.', request, response);
   }
-})
+}
+
+//Weather Constructor Object
+function Weather (skyData) {
+  this.forecast = skyData.summary;
+  this.time = new Date(skyData.time * 1000).toDateString();
+}
 
 
 //Helper Function - Error

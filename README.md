@@ -18,19 +18,30 @@ This application will be primarily built with JavaScript and JSON. It will be in
 **deployed Heroku Link**
 https://cf-301-lab-07.herokuapp.com
 
-7:05:
+**2020.01.22**
+7:05pm:
 Finished setting up files needed to start lab. Brett arrives. Starting feature 1 now. 
 
-8:05: 
+8:05pm: 
 Finished the .map set up. Now starting feature 2.
+
+9:00pm:
+Finished feature 2. We are both feeling tired and stupid. Gonna head home and try again tomorrow. 
+
+**2020.01.23**
+5:15pm:
+Beginning to set up to tackle feature 3.
+
+6:30pm:
+Figured out feature 3 with the help of Clayton, Thomas, Kory, Cas, and Krystal.
 
 <!-- Use this area to document the iterative changes made to your application as each feature is successfully implemented. Use time stamps. Here's an examples:
 
 01-01-2001 4:59pm - Application now has a fully-functional express server, with a GET route for the location resource.
+-->
 
 ## Credits and Collaborations
-<!-- Give credit (and a link) to other people or resources that helped you build this application. -->
--->
+Big shout outs to TAs Cory and Leo for helping us understand what the hell was going on with this lab.
 
 ## Feature Progress
 
@@ -39,9 +50,9 @@ Number and name of feature: Data formatting
 
 Estimate of time needed to complete: 30 min
 
-Start time: 7:05
+Start time: 7:05pm
 
-Finish time: 8:00
+Finish time: 8:00pm
 
 Actual time needed to complete: 55 min
 
@@ -50,22 +61,22 @@ Number and name of feature: Locations
 
 Estimate of time needed to complete: 1 hour
 
-Start time: 8:02
+Start time: 8:02pm
 
-Finish time: _____
+Finish time: 9:00pm
 
-Actual time needed to complete: _____
+Actual time needed to complete: 1 hour
 
 ### Feature 3
 Number and name of feature: Weather
 
-Estimate of time needed to complete: _____
+Estimate of time needed to complete: 1 hour
 
-Start time: _____
+Start time: 5:15pm
 
-Finish time: _____
+Finish time: 6:30pm
 
-Actual time needed to complete: _____
+Actual time needed to complete: 1 hour, 15 min
 
 ### Feature 4
 Number and name of feature: Eventful
