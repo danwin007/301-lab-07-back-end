@@ -35,13 +35,18 @@ Beginning to set up to tackle feature 3.
 6:30pm:
 Figured out feature 3 with the help of Clayton, Thomas, Kory, Cas, and Krystal.
 
+7:18pm:
+Tried to verify that the app was working with the deployed site (on heroku). It was working on the live-server and host 3000 versions but the live deployed site was returning errors.
+
+I brought the issue to Cory and we couldn't figure it out. Kate tagged in. Still no good. Then we asked John, lead instructor. He suggested using the actual live Code Fellows City Explorer page to test. We tried that and it still didn't work. 30 minutes later, Thomas wanders over curious about our issue. The console error was related to cors. We tried some edits to cors. We tried redeploying to Heroku a few times. No Luck. Thomas suggested that we add our API keys to heroku since the .env file is not pushed up when we deploy. There is a section on heroku for adding API keys. We added those and the deployed app now works! However, I've burned a lot of time on this now so I'm going to work on the code challenges for the rest of the night.
+
 <!-- Use this area to document the iterative changes made to your application as each feature is successfully implemented. Use time stamps. Here's an examples:
 
 01-01-2001 4:59pm - Application now has a fully-functional express server, with a GET route for the location resource.
 -->
 
 ## Credits and Collaborations
-Big shout outs to TAs Cory and Leo for helping us understand what the hell was going on with this lab.
+Big shout outs to TAs Cory and Leo for helping us understand what the hell was going on with this lab. Also Clayton, Cas, Krystal, Thomas, and Kory.
 
 ## Feature Progress
 
